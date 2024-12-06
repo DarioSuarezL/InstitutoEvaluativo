@@ -26,5 +26,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/tipos', [TipoController::class, 'index'])->name('tipos.index');
+Route::post('/tipos', [TipoController::class, 'store'])->name('tipos.store');
 
 require __DIR__.'/auth.php';

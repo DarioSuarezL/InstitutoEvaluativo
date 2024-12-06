@@ -31,7 +31,10 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tipo::create([
+            'nombre' => $request->nombre
+        ]);
+        return redirect()->route('tipos.index');
     }
 
     /**
