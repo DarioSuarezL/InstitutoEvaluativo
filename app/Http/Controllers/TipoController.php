@@ -66,6 +66,7 @@ class TipoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Tipo::destroy($id);
+        return redirect()->route('tipos.index');
     }
 }

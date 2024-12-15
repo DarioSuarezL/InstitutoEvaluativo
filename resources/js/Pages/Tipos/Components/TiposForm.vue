@@ -10,7 +10,6 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('tipos.store'));
-    // console.log(form.nombre);
 }
 
 </script>

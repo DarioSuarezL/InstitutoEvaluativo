@@ -27,5 +27,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/tipos', [TipoController::class, 'index'])->name('tipos.index');
 Route::post('/tipos', [TipoController::class, 'store'])->name('tipos.store');
+Route::delete('/tipos/{id}', [TipoController::class, 'destroy'])->name('tipos.destroy');
+// Route::get('/tipos/{id}', [TipoController::class, 'show'])->name('tipos.show');
+// Route::get('/tipos/{id}/edit', [TipoController::class, 'edit'])->name('tipos.edit');
 
 require __DIR__.'/auth.php';
