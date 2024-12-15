@@ -1,18 +1,17 @@
 <script setup>
 import { router } from '@inertiajs/vue3';
 import RedButton from '@/Components/RedButton.vue';
-// import GreenButton from '@/Components/GreenButton.vue';
 
 const props = defineProps({
-    tipos: {
+    areas: {
         type: Array,
         required: true,
     },
 })
 
-const deleteTipo = (id) => {
-    if(confirm('¿Estás seguro de eliminar este tipo?')) {
-        router.delete(route('tipos.destroy', id));
+const deleteArea = (id) => {
+    if(confirm('¿Estás seguro de eliminar esta área de conocimiento?')) {
+        router.delete(route('areas.destroy', id));
     }
 }
 
@@ -28,13 +27,13 @@ const deleteTipo = (id) => {
             </tr>
         </thead>
         <tbody>
-            <tr class="border-t" v-for="tipo in tipos" :key="tipo.id">
-                <td class="p-3 text-center">{{ tipo.id }}</td>
-                <td class="p-3 text-center">{{ tipo.nombre }}</td>
+            <tr class="border-t" v-for="area in areas" :key="area.id">
+                <td class="p-3 text-center">{{ area.id }}</td>
+                <td class="p-3 text-center">{{ area.nombre }}</td>
                 <td class="p-3 text-center">
                     <div class="flex justify-center space-x-2">
                         <RedButton
-                            @click="deleteTipo(tipo.id)"
+                            @click="deleteArea(area.id)"
                         >
                             Eliminar
                         </RedButton>

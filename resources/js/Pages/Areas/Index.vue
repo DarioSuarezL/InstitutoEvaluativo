@@ -2,12 +2,11 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
-import TiposList from './Components/TiposList.vue';
-import TiposForm from './Components/TiposForm.vue';
-
+import AreasList from './Components/AreasList.vue';
+import AreasForm from './Components/AreasForm.vue';
 
 const props = defineProps({
-    tipos: {
+    areas: {
         type: Array,
         required: true,
     },
@@ -20,7 +19,7 @@ const props = defineProps({
     <AuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                Tipos de pregunta
+                Áreas de conocimiento
             </h2>
         </template>
 
@@ -31,15 +30,16 @@ const props = defineProps({
                         <div class="p-6 lg:p-8 bg-white">
                             <div class="flex justify-around mb-3">
                                 <h1 class="mt-3 text-2xl font-medium text-gray-900">
-                                    Lista de los tipos de preguntas
+                                    Lista de las áreas de conocimiento
                                 </h1>
 
-                                <TiposForm />
+                                <AreasForm />
 
                             </div>
                             <div class="bg-gray-100 border rounded-lg lg:w-2/3 mx-auto">
 
-                                <TiposList :tipos="tipos" />
+                                <!-- <TiposList :tipos="tipos" /> -->
+                                <AreasList :areas="areas" />
 
                             </div>
                         </div>

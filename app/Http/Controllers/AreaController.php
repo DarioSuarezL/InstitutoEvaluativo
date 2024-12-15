@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tipo;
+use App\Models\Area;
 use Illuminate\Http\Request;
 
-class TipoController extends Controller
+class AreaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tipos = Tipo::all();
-        return inertia('Tipos/Index', [
-            'tipos' => $tipos
+        $areas = Area::all();
+        return inertia('Areas/Index', [
+            'areas' => $areas
         ]);
     }
 
@@ -23,10 +23,10 @@ class TipoController extends Controller
      */
     public function store(Request $request)
     {
-        Tipo::create([
+        Area::create([
             'nombre' => $request->nombre
         ]);
-        return redirect()->route('tipos.index');
+        return redirect()->route('areas.index');
     }
 
     /**
@@ -34,7 +34,7 @@ class TipoController extends Controller
      */
     public function destroy(string $id)
     {
-        Tipo::destroy($id);
-        return redirect()->route('tipos.index');
+        Area::destroy($id);
+        return redirect()->route('areas.index');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AreaController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
@@ -30,5 +31,9 @@ Route::post('/tipos', [TipoController::class, 'store'])->name('tipos.store');
 Route::delete('/tipos/{id}', [TipoController::class, 'destroy'])->name('tipos.destroy');
 // Route::get('/tipos/{id}', [TipoController::class, 'show'])->name('tipos.show');
 // Route::get('/tipos/{id}/edit', [TipoController::class, 'edit'])->name('tipos.edit');
+
+Route::get('/areas', [AreaController::class, 'index'])->name('areas.index');
+Route::post('/areas', [AreaController::class, 'store'])->name('areas.store');
+Route::delete('/areas/{id}', [AreaController::class, 'destroy'])->name('areas.destroy');
 
 require __DIR__.'/auth.php';
