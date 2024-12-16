@@ -29,7 +29,7 @@ const props = defineProps({
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <div class="p-6 lg:p-8 bg-white">
-                            <div class="flex justify-around mb-3">
+                            <div class="flex mb-3 justify-between">
                                 <h1 class="mt-3 text-2xl font-medium text-gray-900">
                                     Lista de los tipos de preguntas
                                 </h1>
@@ -37,7 +37,7 @@ const props = defineProps({
                                 <TiposForm />
 
                             </div>
-                            <div class="bg-gray-100 border rounded-lg lg:w-2/3 mx-auto">
+                            <div class="bg-gray-100 border rounded-lg mx-auto">
 
                                 <TiposList :tipos="tipos" />
 

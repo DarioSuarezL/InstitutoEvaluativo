@@ -28,7 +28,7 @@ const props = defineProps({
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <div class="p-6 lg:p-8 bg-white">
-                            <div class="flex justify-around mb-3">
+                            <div class="flex justify-between mb-3">
                                 <h1 class="mt-3 text-2xl font-medium text-gray-900">
                                     Lista de las áreas de conocimiento
                                 </h1>
@@ -36,9 +36,8 @@ const props = defineProps({
                                 <AreasForm />
 
                             </div>
-                            <div class="bg-gray-100 border rounded-lg lg:w-2/3 mx-auto">
+                            <div class="bg-gray-100 border rounded-lg mx-auto">
 
-                                <!-- <TiposList :tipos="tipos" /> -->
                                 <AreasList :areas="areas" />
 
                             </div>

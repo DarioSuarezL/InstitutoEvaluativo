@@ -1,18 +1,15 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, router } from '@inertiajs/vue3';
-
-import GreenButton from '@/Components/GreenButton.vue';
-import UsersList from './Components/UsersList.vue';
-
-
+import { Head } from '@inertiajs/vue3';
+import UsersForm from './Components/UsersForm.vue';
 
 const props = defineProps({
-    users: {
-        type: Array,
+    user: {
+        type: Object,
         required: true,
     },
-})
+});
+
 </script>
 
 <template>
@@ -20,7 +17,7 @@ const props = defineProps({
     <AuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                Usuarios
+                Editar usuario
             </h2>
         </template>
 
@@ -31,17 +28,12 @@ const props = defineProps({
                         <div class="p-6 lg:p-8 bg-white">
                             <div class="flex justify-between mb-3">
                                 <h1 class="mt-3 text-2xl font-medium text-gray-900">
-                                    Lista de usuarios
+                                    Formulario del usuario #{{ props.user.id }}
                                 </h1>
-
-                                <GreenButton @click="router.get(route('users.create'))">
-                                    + Agregar usuario
-                                </GreenButton>
-
                             </div>
                             <div class="bg-gray-100 border rounded-lg mx-auto">
 
-                                <UsersList :users="users" />
+                                <UsersForm :user="user" />
 
                             </div>
                         </div>
