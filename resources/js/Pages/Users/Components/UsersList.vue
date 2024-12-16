@@ -3,16 +3,17 @@ import { router } from '@inertiajs/vue3';
 import RedButton from '@/Components/RedButton.vue';
 
 const props = defineProps({
-    tipos: {
+    users: {
         type: Array,
         required: true,
     },
 })
 
-const deleteTipo = (id) => {
-    if(confirm('¿Estás seguro de eliminar este tipo?')) {
-        router.delete(route('tipos.destroy', id));
-    }
+const deleteUser = (id) => {
+    // if(confirm('¿Estás seguro de eliminar este usuario?')) {
+    //     router.delete(route('users.destroy', id));
+    // }
+    console.log('deleteUser', id);
 }
 
 </script>
@@ -23,17 +24,19 @@ const deleteTipo = (id) => {
             <tr>
                 <th class="p-3">ID</th>
                 <th class="p-3">Nombre</th>
+                <th class="p-3">Email</th>
                 <th class="p-3">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="border-t" v-for="tipo in tipos" :key="tipo.id">
-                <td class="p-3 text-center">{{ tipo.id }}</td>
-                <td class="p-3 text-center">{{ tipo.nombre }}</td>
+            <tr class="border-t" v-for="user in users" :key="user.id">
+                <td class="p-3 text-center">{{ user.id }}</td>
+                <td class="p-3 text-center">{{ user.name }}</td>
+                <td class="p-3 text-center">{{ user.email }}</td>
                 <td class="p-3 text-center">
                     <div class="flex justify-center space-x-2">
                         <RedButton
-                            @click="deleteTipo(tipo.id)"
+                            @click="deleteUser(user.id)"
                         >
                             Eliminar
                         </RedButton>

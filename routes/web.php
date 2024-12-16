@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -35,5 +36,9 @@ Route::delete('/tipos/{id}', [TipoController::class, 'destroy'])->name('tipos.de
 Route::get('/areas', [AreaController::class, 'index'])->name('areas.index');
 Route::post('/areas', [AreaController::class, 'store'])->name('areas.store');
 Route::delete('/areas/{id}', [AreaController::class, 'destroy'])->name('areas.destroy');
+// Route::get('/areas/{id}', [AreaController::class, 'show'])->name('areas.show');
+// Route::get('/areas/{id}/edit', [AreaController::class, 'edit'])->name('areas.edit');
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 require __DIR__.'/auth.php';
